@@ -1,5 +1,5 @@
+using CalamityMod;
 using CalamityMod.Systems.Collections;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -67,53 +67,7 @@ namespace GrapeBeer21Mod
                 && Main.player[projectile.owner].heldProj != projectile.whoAmI
                 && projectile.aiStyle != ProjAIStyleID.HeldProjectile)
             {
-                // 与2.1.2 CalamityUtils.HomeInOnNPC(projectile, !tileCollide, range, 12f, 20f, true) 完全一致
-                HomeInOnNPC(projectile, !projectile.tileCollide, homingRange, 12f, 20f, true);
-            }
-        }
-
-        /// <summary>
-        /// 完全复刻灾厄2.1.2 ProjectileUtils.HomeInOnNPC 逻辑
-        /// </summary>
-        private static void HomeInOnNPC(Projectile projectile, bool ignoreTiles, float distanceRequired, float homingVelocity, float inertia, bool respectIFrames)
-        {
-            if (!projectile.friendly)
-                return;
-
-            Vector2 destination = projectile.Center;
-            float maxDistance = distanceRequired;
-            bool locatedTarget = false;
-
-            float npcDistCompare = 25000f;
-            int targetIndex = -1;
-            foreach (NPC n in Main.ActiveNPCs)
-            {
-                float extraDistance = (n.width / 2) + (n.height / 2);
-                if (!n.CanBeChasedBy(projectile, false)
-                    || !projectile.WithinRange(n.Center, maxDistance + extraDistance)
-                    || (respectIFrames && (projectile.localNPCImmunity[n.whoAmI] > 0 || n.immune[projectile.owner] > 0)))
-                    continue;
-
-                float currentNPCDist = Vector2.Distance(n.Center, projectile.Center);
-                if (respectIFrames && Projectile.perIDStaticNPCImmunity[projectile.type][n.whoAmI] > Main.GameUpdateCount)
-                    currentNPCDist += 1600f;
-                if (currentNPCDist < npcDistCompare && (ignoreTiles || Collision.CanHit(projectile.Center, 1, 1, n.Center, 1, 1)))
-                {
-                    npcDistCompare = currentNPCDist;
-                    targetIndex = n.whoAmI;
-                }
-            }
-
-            if (targetIndex != -1)
-            {
-                destination = Main.npc[targetIndex].Center;
-                locatedTarget = true;
-            }
-
-            if (locatedTarget)
-            {
-                Vector2 homeDirection = (destination - projectile.Center).SafeNormalize(Vector2.UnitY);
-                projectile.velocity = (projectile.velocity * inertia + homeDirection * homingVelocity) / (inertia + 1f);
+                CalamityUtils.HomeInOnNPC(projectile, !projectile.tileCollide, homingRange, 12f, 20f, true);
             }
         }
     }
