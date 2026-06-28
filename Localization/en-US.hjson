@@ -5,26 +5,26 @@ Mods: {
 		Items: {
 			GrapeBeer21: {
 				Tooltip: ""
-				DisplayName: Grape Beer21
+				DisplayName: 葡萄啤酒
 			}
 		}
 
 		Buffs: {
 			GrapeBeer21Buff: {
 				Description: Mods.GrapeBeer21Mod.Buffs.GrapeBeer21Buff.Description
-				DisplayName: Grape Beer21 Buff
+				DisplayName: 葡萄啤酒
 			}
 		}
 	}
 }
 
 Items: GrapeBeer21:
-DisplayName: Grape Beer 2.1
+DisplayName: 葡萄啤酒 2.1
 Tooltip:
 	'''
-	Bullets, Arrows, Darts, and Rockets gain homing
-	{0}% reduced critical strike damage
+	子弹、箭、飞镖和火箭获得追踪能力
+	{0}% 降低暴击伤害
 	{$Common.AlcoholWarning}
 	'''
 Buffs: GrapeBeer21Buff:
-Description: Ranged projectiles gain homing, reduced critical strike damage
+Description: 远程弹幕获得追踪能力，降低暴击伤害
