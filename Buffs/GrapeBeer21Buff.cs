@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace GrapeBeer21Mod.Buffs
+namespace OldCalamityDrinks.Buffs
 {
     public class GrapeBeer21Buff : ModBuff
     {

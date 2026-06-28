@@ -1,0 +1,33 @@
+[b]🍇 葡萄啤酒 – 经典追踪[/b]
+
+[hr]
+[b]效果[/b]
+子弹、箭、飞镖、火箭获得强力自动追踪，分裂弹继承追踪。
+
+[b]代价[/b]
+暴击伤害降低 75%。
+
+[b]制作[/b]
+肉后于酒桶制作，支持批量合成。
+
+[b]兼容[/b]
+独立物品，兼容更好的体验增益开关，与官方灾厄无冲突。
+
+[hr]
+[b]🍇 Grape Beer – Classic Homing[/b]
+
+[hr]
+[b]Effect[/b]
+Bullets, arrows, darts, and rockets gain strong auto-homing. Split projectiles inherit homing.
+
+[b]Cost[/b]
+Crit damage reduced by 75%.
+
+[b]Crafting[/b]
+At the Keg after Hardmode. Batch crafting supported.
+
+[b]Compatibility[/b]
+Standalone item. Compatible with Better Experience's buff toggle. No conflicts with official Calamity.
+
+[hr]
+[url=https://github.com/FiftyPaces/OldCalamityDrinks]GitHub[/url]

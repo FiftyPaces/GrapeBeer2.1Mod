@@ -1,9 +1,9 @@
-using GrapeBeer21Mod.Buffs;
-using GrapeBeer21Mod.Items;
+using OldCalamityDrinks.Buffs;
+using OldCalamityDrinks.Items;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 
-namespace GrapeBeer21Mod
+namespace OldCalamityDrinks
 {
     public class GrapeBeer21ModSystem : ModSystem
     {

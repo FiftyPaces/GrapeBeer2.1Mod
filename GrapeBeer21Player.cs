@@ -1,7 +1,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace GrapeBeer21Mod
+namespace OldCalamityDrinks
 {
     public class GrapeBeer21Player : ModPlayer
     {

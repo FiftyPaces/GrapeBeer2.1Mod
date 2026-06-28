@@ -1,8 +1,8 @@
-displayName = Grape Beer 2.1
+displayName = 葡萄啤酒2.1(Grape Beer)
 author = FiftyPaces
-version = 1.0.0.0
+version = 2.0
 modReferences = CalamityMod
-homepage = https://github.com/FiftyPaces/GrapeBeer2.1Mod
+homepage = https://github.com/FiftyPaces/OldCalamityDrinks
 hideCode = false
 hideResources = false
 includeSource = true

@@ -1,11 +1,11 @@
 using CalamityMod;
-using GrapeBeer21Mod.Buffs;
+using OldCalamityDrinks.Buffs;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace GrapeBeer21Mod.Items
+namespace OldCalamityDrinks.Items
 {
     public class GrapeBeer21 : ModItem
     {

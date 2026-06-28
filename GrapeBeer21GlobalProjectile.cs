@@ -5,7 +5,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace GrapeBeer21Mod
+namespace OldCalamityDrinks
 {
     public class GrapeBeer21GlobalProjectile : GlobalProjectile
     {
