@@ -1,5 +1,3 @@
-using CalamityMod;
-using GrapeBeer21Mod.Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -19,8 +17,8 @@ namespace GrapeBeer21Mod.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
+            // 只设置标记，暴击降低由 GrapeBeer21Player.ModifyHitNPC 独立处理
             player.GetModPlayer<GrapeBeer21Player>().grapeBeer21 = true;
-            player.Calamity().critDamage -= GrapeBeer21.CritLoss * 0.01f;
         }
     }
 }
