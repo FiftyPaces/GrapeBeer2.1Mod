@@ -50,13 +50,9 @@ namespace GrapeBeer21Mod
             {
                 if (parent.TryGetGlobalProjectile(out GrapeBeer21GlobalProjectile pg) && pg.grapeBeer21)
                 {
-                    // 子弹幕只继承追踪，不改免疫/生命值，避免爆炸弹无法二次伤害
+                    // 子弹幕只继承标记，不加追踪/不改免疫/不改生命值
+                    // 爆炸弹等子弹幕加追踪会导致无法正常命中目标
                     grapeBeer21 = true;
-                    if (Main.player[projectile.owner].heldProj != projectile.whoAmI
-                        && projectile.aiStyle != ProjAIStyleID.HeldProjectile
-                        && projectile.damage > 0
-                        && !CalamityProjectileSets.DoesNotGetHomingWithGrapeBeer[projectile.type])
-                        homingRange = 600;
                 }
             }
         }
