@@ -5,26 +5,25 @@ Mods: {
 		Items: {
 			GrapeBeer21: {
 				Tooltip: ""
-				DisplayName: 葡萄啤酒
+				DisplayName: 葡萄啤酒 Grape Beer
 			}
 		}
 
 		Buffs: {
 			GrapeBeer21Buff: {
 				Description: Mods.GrapeBeer21Mod.Buffs.GrapeBeer21Buff.Description
-				DisplayName: 葡萄啤酒
+				DisplayName: 葡萄啤酒 Grape Beer
 			}
 		}
 	}
 }
 
 Items: GrapeBeer21:
-DisplayName: 葡萄啤酒 2.1
+DisplayName: 葡萄啤酒 Grape Beer
 Tooltip:
 	'''
-	子弹、箭、飞镖和火箭获得追踪能力
-	{0}% 降低暴击伤害
-	{$Common.AlcoholWarning}
+	子弹，箭，飞镖和火箭可以追踪
+	降低75%暴击伤害
 	'''
 Buffs: GrapeBeer21Buff:
-Description: 远程弹幕获得追踪能力，降低暴击伤害
+Description: 子弹，箭，飞镖和火箭可以追踪

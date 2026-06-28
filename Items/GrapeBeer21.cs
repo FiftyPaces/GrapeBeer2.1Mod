@@ -9,8 +9,6 @@ namespace GrapeBeer21Mod.Items
 {
     public class GrapeBeer21 : ModItem
     {
-        public static float CritLoss = 75;
-
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 20;
