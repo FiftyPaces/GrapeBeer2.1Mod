@@ -13,6 +13,7 @@ namespace GrapeBeer21Mod
 
         public bool grapeBeer21;
         public float homingRange;
+        public bool isChildProjectile;
 
         public override void OnSpawn(Projectile projectile, IEntitySource source)
         {
@@ -50,9 +51,18 @@ namespace GrapeBeer21Mod
             {
                 if (parent.TryGetGlobalProjectile(out GrapeBeer21GlobalProjectile pg) && pg.grapeBeer21)
                 {
-                    // 子弹幕只继承标记，不加追踪/不改免疫/不改生命值
-                    // 爆炸弹等子弹幕加追踪会导致无法正常命中目标
-                    grapeBeer21 = true;
+                    // 完全复现2.1.2行为：子**弹幕继承Apply()的免疫/生命值设定
+                    // （与2.1.2 CalamityGlobalProjectile.ApplyGrapeBeer行为一致）
+                    if (Main.player[projectile.owner].heldProj != projectile.whoAmI
+                        && projectile.aiStyle != ProjAIStyleID.HeldProjectile
+                        && projectile.damage > 0
+                        && !CalamityProjectileSets.DoesNotGetHomingWithGrapeBeer[projectile.type])
+                        Apply();
+                    else
+                        grapeBeer21 = true;
+
+                    // 标记为子**弹幕，跳过追踪（2.2追踪系统会导致爆炸弹无法命中）
+                    isChildProjectile = true;
                 }
             }
         }
@@ -60,6 +70,7 @@ namespace GrapeBeer21Mod
         public override void PostAI(Projectile projectile)
         {
             if (homingRange > 0f
+                && !isChildProjectile
                 && Main.player[projectile.owner].heldProj != projectile.whoAmI
                 && projectile.aiStyle != ProjAIStyleID.HeldProjectile)
             {
